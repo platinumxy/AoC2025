@@ -1,4 +1,5 @@
 (executable
  (public_name aoc)
  (name main)
+ (libraries unix)
  (modules common main day1 day2))
