@@ -1,4 +1,4 @@
 (executable
  (public_name aoc)
  (name main)
- (modules common day1 main))
+ (modules common main day1 day2))
