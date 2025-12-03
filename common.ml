@@ -9,3 +9,6 @@ let str_replace target result =
 
 let str_remove target str =
   String.to_seq str |> Seq.filter (fun c -> c <> target) |> String.of_seq
+
+let zip l1 l2 = List.map2 (fun a b -> (a, b)) l1 l2
+let enumerate l = zip (gen_range 0 (List.length l)) l
