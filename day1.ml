@@ -1,6 +1,6 @@
 open Common
 
-let get_input =
+let get_input () =
   In_channel.with_open_text "inputs/day1.input" In_channel.input_lines
 
 let conv x =

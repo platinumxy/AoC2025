@@ -1,4 +1,4 @@
-let get_input =
+let get_input () =
   In_channel.with_open_text "inputs/day3.input" In_channel.input_lines
 
 let rec merge = function [] -> "" | x :: xs -> string_of_int x ^ merge xs

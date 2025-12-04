@@ -1,6 +1,6 @@
 open Common
 
-let get_input =
+let get_input () =
   String.split_on_char ','
     (str_remove '\n'
        (In_channel.with_open_text "inputs/day2.input" In_channel.input_all))
