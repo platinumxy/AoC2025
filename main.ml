@@ -1,8 +1,4 @@
-type 'a day = {
-  get_input : unit -> 'a;
-  part1 : 'a -> int;
-  part2 : 'a -> int;
-}
+type 'a day = { get_input : unit -> 'a; part1 : 'a -> int; part2 : 'a -> int }
 type packed_day = Day : 'a day -> packed_day
 
 let days =
@@ -10,6 +6,7 @@ let days =
     Day { get_input = Day1.get_input; part1 = Day1.part1; part2 = Day1.part2 };
     Day { get_input = Day2.get_input; part1 = Day2.part1; part2 = Day2.part2 };
     Day { get_input = Day3.get_input; part1 = Day3.part1; part2 = Day3.part2 };
+    Day { get_input = Day4.get_input; part1 = Day4.part1; part2 = Day4.part2 };
   |]
 
 let run_day idx =
@@ -19,7 +16,8 @@ let run_day idx =
     let (Day { get_input; part1; part2 }) = days.(idx - 1) in
     let input = get_input () in
     Printf.printf "Day %d\tPart 1: %d\n" idx (part1 input);
-    Printf.printf "Day %d\tPart 2: %d\n" idx (part2 input)
+    Printf.printf "Day %d\tPart 2: %d\n" idx (part2 input);
+    flush stdout
 
 let run_all () = Array.iteri (fun i _ -> run_day (i + 1)) days
 
