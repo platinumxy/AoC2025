@@ -24,7 +24,7 @@ let count_around map idx jdx =
 let zip_cords map =
   List.mapi (fun i row -> List.mapi (fun j v -> (v, i, j)) row) map
 
-let reconstruct_map (tagged_map : (int * char * int * int) list) =
+let reconstruct_map tagged_map =
   let rec aux acc curr_row = function
     | [] -> List.rev (List.rev curr_row :: acc)
     | (tagged, v, _, j) :: rest ->
