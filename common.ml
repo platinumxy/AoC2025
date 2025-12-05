@@ -14,3 +14,13 @@ let str_remove target str =
 let char_list_of_string str = String.to_seq str |> List.of_seq
 let zip l1 l2 = List.map2 (fun a b -> (a, b)) l1 l2
 let enumerate l = zip (gen_range 0 (List.length l)) l
+
+let split_at idx =
+  let rec aux acc n = function
+    | [] -> (List.rev acc, [])
+    | h :: t ->
+        if n == 0 then (List.rev acc, h :: t) else aux (h :: acc) (n - 1) t
+  in
+  aux [] idx
+
+let sum = List.fold_left ( + ) 0
