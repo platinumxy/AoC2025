@@ -9,12 +9,13 @@ let parse_range str =
   | _ -> failwith ("Invalid range format: " ^ str)
 
 let parse_ranges strs =
-  strs
-  |> List.map parse_range
+  strs |> List.map parse_range
   |> List.sort (fun r1 r2 -> compare r1.start r2.start)
 
 let get_input () =
-  let lines = In_channel.with_open_text "inputs/day5.input" In_channel.input_lines in
+  let lines =
+    In_channel.with_open_text "inputs/day5.input" In_channel.input_lines
+  in
   match List.find_index (Common.comp_equiv "") lines with
   | None -> failwith "Invalid input format"
   | Some split_pt -> (
@@ -23,14 +24,11 @@ let get_input () =
       | _ :: items -> (parse_ranges ranges, List.map int_of_string items)
       | [] -> failwith "Invalid input format: missing items after split")
 
-let in_range item rng =
-  item >= rng.start && item <= rng.end_
+let in_range item rng = item >= rng.start && item <= rng.end_
 
 let part1 (ranges, items) =
   let is_fresh item = List.exists (in_range item) ranges in
-  items
-  |> List.filter is_fresh
-  |> List.length
+  items |> List.filter is_fresh |> List.length
 
 let part2 (ranges, _) =
   let rec find_cap curr = function
