@@ -9,6 +9,7 @@ let days =
     Day { get_input = Day4.get_input; part1 = Day4.part1; part2 = Day4.part2 };
     Day { get_input = Day5.get_input; part1 = Day5.part1; part2 = Day5.part2 };
     Day { get_input = Day6.get_input; part1 = Day6.part1; part2 = Day6.part2 };
+    Day { get_input = Day7.get_input; part1 = Day7.part1; part2 = Day7.part2 };
   |]
 
 let run_day idx =
