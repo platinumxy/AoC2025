@@ -52,3 +52,5 @@ let part2 diagram =
     | row :: rows -> aux (resolve_splits row timelines) rows
   in
   aux [ (find_start diagram, 1) ] (List.tl diagram)
+
+let () = Registry.register 7 ~get_input ~part1 ~part2

@@ -31,3 +31,5 @@ let part2 lines =
       (50, 0) lines
   in
   num_zeros
+
+let () = Registry.register 1 ~get_input ~part1 ~part2

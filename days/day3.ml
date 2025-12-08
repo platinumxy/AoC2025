@@ -44,3 +44,5 @@ let solve_with fn lines =
 
 let part1 = solve_with (max_for 2)
 let part2 = solve_with (max_for 12)
+
+let () = Registry.register 3 ~get_input ~part1 ~part2

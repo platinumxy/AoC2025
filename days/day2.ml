@@ -62,3 +62,5 @@ let validate_input fn input =
 
 let part1 = validate_input invalidIdPT1
 let part2 = validate_input invalidIdPT2
+
+let () = Registry.register 2 ~get_input ~part1 ~part2

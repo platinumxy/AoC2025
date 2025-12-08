@@ -53,3 +53,5 @@ let part2 lines =
   let op_line = Common.last char_lines in
   let num_lines = List.rev (List.tl (List.rev char_lines)) in
   Common.sum (List.map resolve_eq (extract_blocks [] num_lines op_line))
+
+let () = Registry.register 6 ~get_input ~part1 ~part2

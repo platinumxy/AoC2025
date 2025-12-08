@@ -54,3 +54,5 @@ let part2 map =
     else aux (acc + count) new_map
   in
   aux 0 map
+
+let () = Registry.register 4 ~get_input ~part1 ~part2

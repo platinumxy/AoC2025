@@ -45,3 +45,5 @@ let part2 (ranges, _) =
   in
   let range_size rng = rng.end_ - rng.start + 1 in
   ranges |> fold_overlaps |> List.map range_size |> Common.sum
+
+let () = Registry.register 5 ~get_input ~part1 ~part2

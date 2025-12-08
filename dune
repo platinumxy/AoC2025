@@ -1,6 +1,6 @@
 (executable
  (public_name aoc)
  (name main)
- (libraries unix)
- (modules common main day1 day2 day3 day4 day5 day6 day7)
+ (libraries unix str days)
+ (link_flags (:standard -linkall))
  (modes byte exe))
